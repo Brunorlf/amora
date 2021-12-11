@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+---
+title: "Exercício Aula"
+author: "Bruno Fernandes"
+date: "`r Sys.Date()`"
+output_dir: "."
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
 
-You can use the [editor on GitHub](https://github.com/Brunorlf/amora/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## A New Output Format
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> Minha frase importante
 
-### Markdown
+Lista:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. Elemento 1
+1. Elemento 2
+1. Elemento 3
 
-```markdown
-Syntax highlighted code block
+**Negrito**  *itálico* `html`
 
-# Header 1
-## Header 2
-### Header 3
+```{r dados}
+library(tidyverse)
+## Leitura dos dados
+survey <- read_csv("dados/kaggle_survey_2021_responses.csv", 
+                   locale = locale())
 
-- Bulleted
-- List
+## Separação da primeira linha com a descr. da variável
+descricao_survey <- survey %>% 
+  slice(n = 1)
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# Observações da base
+survey_limpo <- survey %>% 
+  slice(n = 2:n()) # n() total de linhas na base
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Brunorlf/amora/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
